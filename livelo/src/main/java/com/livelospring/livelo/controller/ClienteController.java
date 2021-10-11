@@ -4,7 +4,7 @@ import java.util.List;
 
 
 import com.livelospring.livelo.model.Cliente;
-
+import com.livelospring.livelo.model.dto.ClienteDTO;
 import com.livelospring.livelo.repository.ClienteRepository;
 import com.livelospring.livelo.service.ClienteService;
 
@@ -39,8 +39,8 @@ public class ClienteController {
 
     @PostMapping("/cliente/cadastro")
     @ApiOperation(value = "MÉTODO QUE CADASTRA CLIENTE")
-    public Cliente cliente(@RequestBody Cliente cliente) {
-		return CS.cadastrar(cliente);
+    public Cliente cliente(@RequestBody ClienteDTO clienteDTO) {
+		return CS.cadastrar(clienteDTO);
 	 }
 	
 	@GetMapping("/cliente/busca/{nome}")

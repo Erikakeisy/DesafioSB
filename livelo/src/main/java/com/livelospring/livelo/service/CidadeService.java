@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.livelospring.livelo.model.Cidade;
+import com.livelospring.livelo.model.dto.CidadeDTO;
 import com.livelospring.livelo.repository.CidadeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class CidadeService {
         return (List<Cidade>) CR.findByestado(estado);
     }
 
-    public Cidade cadastrar(Cidade cidade) {
-		return CR.save(cidade);
+    public Cidade cadastrar(CidadeDTO cidadeDTO) {
+		return CR.save(cidadeDTO.entity(cidadeDTO));
 	}
     
     public void delete(@PathVariable Long id){

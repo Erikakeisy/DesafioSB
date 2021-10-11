@@ -3,6 +3,7 @@ package com.livelospring.livelo.controller;
 import java.util.List;
 
 import com.livelospring.livelo.model.Cidade;
+import com.livelospring.livelo.model.dto.CidadeDTO;
 import com.livelospring.livelo.repository.CidadeRepository;
 import com.livelospring.livelo.service.CidadeService;
 
@@ -39,8 +40,8 @@ public class CidadeController {
 
     @PostMapping("/cidade/cadastro")
     @ApiOperation(value = "MÉTODO QUE CADASTRA CIDADE")
-    public Cidade cliente(@RequestBody Cidade cidade) {
-		return SC.cadastrar(cidade);
+    public Cidade cidade(@RequestBody CidadeDTO cidadeDTO) {
+		return SC.cadastrar(cidadeDTO);
 	 }
 	
 	@GetMapping("/cidade/busca/{nome}}")

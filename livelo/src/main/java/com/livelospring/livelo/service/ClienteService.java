@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.livelospring.livelo.model.Cliente;
+import com.livelospring.livelo.model.dto.ClienteDTO;
 import com.livelospring.livelo.repository.ClienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ ClienteRepository CR;
         return CR.findAll();
     }
 
-	public Cliente cadastrar(Cliente cliente) {
-		return CR.save(cliente);
+	public Cliente cadastrar(ClienteDTO clienteDTO) {
+		return CR.save(clienteDTO.entity(clienteDTO));
 	}
 
     public void Delete(@PathVariable Long id){
